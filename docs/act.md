@@ -1,6 +1,7 @@
 # Preparation for Acetone
 1. Generate the pdb file from ATB website: moleculeID 705057, used the all-atom optimized geo file
 2. The procedure to generate the GAFF files:
+     
       `babel -ipdb 0F-atb-ori-pdb.pdb -omol2 0f-mol2.mol2`
    1. Generate gaussian input file for RESP
       `antechamber -fi mol2 -fo gcrt -i 0f-mol2.mol2 -o 0f_gau.gau`
@@ -21,7 +22,7 @@
       `prepgen -i 0f_with_resp_gaff.ac -o 0f_with_resp_gaff.prepc -f car -rn 0FGA`
    9.  Use parmchk to check the missing force field parameters
       `parmchk2 -i 0F_with_resp_gaff.prepc -o 0F.frcmod -f prepc`
-   10. tleap -s -f leap.in
+   10. `tleap -s -f leap.in`
     ** make sure your leap.in  saveamberparm EFZ EFZ.prmtop EFZ.prmcrd
     here the EFZ matched the prepc file
    11. finally use  amb2gro_top_gro.py
