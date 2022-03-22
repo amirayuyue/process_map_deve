@@ -23,7 +23,7 @@
    9.  Use parmchk to check the missing force field parameters
       `parmchk2 -i 0F_with_resp_gaff.prepc -o 0F.frcmod -f prepc`
    10. `tleap -s -f leap.in`
-    ** make sure your leap.in  saveamberparm EFZ EFZ.prmtop EFZ.prmcrd
+    ** make sure your leap.in file name matches, e.g. saveamberparm EFZ EFZ.prmtop EFZ.prmcrd
     here the EFZ matched the prepc file
    11. finally use  amb2gro_top_gro.py
       `amb2gro_top_gro.py -p prmtop -c prmcrd -t gmx.top -g gmx.gro -b gmx.pdb`
