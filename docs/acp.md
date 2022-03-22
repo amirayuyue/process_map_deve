@@ -4,4 +4,4 @@
 3. Our map is based on the GAFF them applied to other ff too?
    
 ## Result?
-1. Use GAFF fitting result
+1. Use GAFF fitting result 
