@@ -3,6 +3,9 @@
 2. The procedure to generate the GAFF files:
      
       `babel -ipdb 0F-atb-ori-pdb.pdb -omol2 0f-mol2.mol2`
+   - Actiave conda environment on our Debye cluster: 
+      `conda activate AmberTools21`
+
    1. Generate gaussian input file for RESP
       `antechamber -fi mol2 -fo gcrt -i 0f-mol2.mol2 -o 0f_gau.gau`
    2. Change name of gaussian output from “0f_gau.gau.log” to
@@ -27,3 +30,24 @@
     here the EFZ matched the prepc file
    11. finally use  amb2gro_top_gro.py
       `amb2gro_top_gro.py -p prmtop -c prmcrd -t gmx.top -g gmx.gro -b gmx.pdb`
+
+## Solvent options
+- [x]  Hexane
+- [ ] Toluene
+- [x] Acetonitrile
+- [x] Chloroform
+- [ ] DMSO
+- [ ] Water
+
+## Finding the IR, use the IR for hexane?
+1. Acetone in hexane peak and fwhm are  1721.58113730929 17.420249653259816 
+2. The fitting result using the GAFF two fitting with spc
+    
+   pama =[700.20042614, 1350.1860584]#two fitting spc
+
+## Debug for data analysis when generating electrostatic result
+1. Make sure you selected the corrected core atoms, carbonyl carbon and oxgen, it won't matter that much for the other carbon selection
+2. But needs to make sure that the index number in the `core.c` file matches whatever you selected for the other carbon, the index number will change. 
+3. Make sure to change the box dim file `box_dim.txt`
+4. Make sure change the `user_input.txt` file, to match the parameter file
+5. Run the program
