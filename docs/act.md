@@ -50,4 +50,4 @@
 2. But needs to make sure that the index number in the `core.c` file matches whatever you selected for the other carbon, the index number will change. 
 3. Make sure to change the box dim file `box_dim.txt`
 4. Make sure change the `user_input.txt` file, to match the parameter file
-5. Run the program
+5. Run the program `python 01_calc_freq.py -p 4` select 4 processors to generate the eleF.
