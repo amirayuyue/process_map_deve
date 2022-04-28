@@ -51,3 +51,20 @@
 3. Make sure to change the box dim file `box_dim.txt`
 4. Make sure change the `user_input.txt` file, to match the parameter file
 5. Run the program `python 01_calc_freq.py -p 4` select 4 processors to generate the eleF.
+
+## Add ions
+1. add 1M 2M 3M 4M different concentration of ions
+   procedure: Use `GMX` to generate the correct number of ions
+   a. `gmx editconf -f act_opt.gro -c -box 4.5 4.5 4.5 -o act_edit.gro`
+   b. `gmx solvate -cp act_edit.gro -cs spc216 -o act_solvate.gro -p sys.top`
+   c. `gmx grompp -f ions.mdp -c act_solvate -p sys.top -o ions.tpr`
+   d. `gmx genions -s ions.tpr -pname MG -nname CL -pq 2 -neutral -conc 2 -o act_2M.gro -p sys.top`
+   c. Gather the information from GMX on how many ions or SOL will be added or left to the sysytem
+   d. Use packmol Debye: `/home/yyu49/new_proj/acetone/GROMOS_atb/ions/2M/packmol` to insert ions when concentration larger than 1M
+ |     | Exp         | FWHM        | Calc        | FWHM        |
+| :-- | :---------- | :---------- | :---------- | :---------- |
+| D2O | 1697.059639 | 17.30929265 | 1688.169616 | 17.80198024 |
+| 1M  | 1693        |             | 1688.223128 | 20.02722777 |
+| 2M  | 1692        |             | 1687.977883 | 22.2524753  |
+| 3M  | 1691        |             | 1687.701954 | 25.5903466  |
+| 4M  | 1688        |             | 1685.792846 | 26.70297036 |
