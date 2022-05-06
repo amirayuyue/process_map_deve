@@ -1,9 +1,9 @@
 # Preparation for Acetone
 1. Generate the pdb file from ATB website: moleculeID 705057, used the all-atom optimized geo file
 2. The procedure to generate the GAFF files:
-     
+
       `babel -ipdb 0F-atb-ori-pdb.pdb -omol2 0f-mol2.mol2`
-   - Actiave conda environment on our Debye cluster: 
+   - Actiave conda environment on our Debye cluster:
       `conda activate AmberTools21`
 
    1. Generate gaussian input file for RESP
@@ -40,14 +40,14 @@
 - [ ] Water
 
 ## Finding the IR, use the IR for hexane?
-1. Acetone in hexane peak and fwhm are  1721.58113730929 17.420249653259816 
+1. Acetone in hexane peak and fwhm are  1721.58113730929 17.420249653259816
 2. The fitting result using the GAFF two fitting with spc
-    
+
    pama =[700.20042614, 1350.1860584]#two fitting spc
 
 ## Debug for data analysis when generating electrostatic result
 1. Make sure you selected the corrected core atoms, carbonyl carbon and oxgen, it won't matter that much for the other carbon selection
-2. But needs to make sure that the index number in the `core.c` file matches whatever you selected for the other carbon, the index number will change. 
+2. But needs to make sure that the index number in the `core.c` file matches whatever you selected for the other carbon, the index number will change.
 3. Make sure to change the box dim file `box_dim.txt`
 4. Make sure change the `user_input.txt` file, to match the parameter file
 5. Run the program `python 01_calc_freq.py -p 4` select 4 processors to generate the eleF.
@@ -68,3 +68,8 @@
 | 2M  | 1692        |             | 1687.977883 | 22.2524753  |
 | 3M  | 1691        |             | 1687.701954 | 25.5903466  |
 | 4M  | 1688        |             | 1685.792846 | 26.70297036 |
+2. Add ions using tip3p and do analysis using scaled charges
+  CL = -0.85
+  MG = 1.7
+  ../1M/data_ana/start_fitting exp 1697.05963938974 17.309292649099916 and calc 1690.3166324632007 16.689356477284264
+../2M/data_ana/start_fitting exp 1697.05963938974 17.309292649099916 and calc 1689.093207545317 18.914604007588878
