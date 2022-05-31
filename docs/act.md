@@ -94,3 +94,14 @@ SPC use scaled charges 0.9 and run simulation and ana
 | 2M  | 1694        |             | 1696.771808 | 21.13985153  |
 | 3M  | 1692        |             | 1695.897018 | 25.5903466  |
 | 4M  | 1691        |             | 1694.274372 | 24.4777228 |
+
+## different solvent acetone use acetone in hexane
+../toluene/data_ana/start_fitting exp 1716.58807212205 12.760055478509912 and calc 1717.6774000631308 6.6757425909136145
+../acenitrile/data_ana/start_fitting exp 1712.92649098474 12.649098474340008 and calc 1710.4190495987768 8.900990121218456
+../cholorform/data_ana/start_fitting exp 1710.37447988904 14.091539528430076 and calc 1707.6819202027104 13.351485181827684
+../DMSO/data_ana/start_fitting exp 1709.04299583911 12.538141470180108 and calc 1711.3814035067585 11.126237651522842
+../D2O/data_ana/start_fitting exp 1697.05963938974 17.309292649099916 and calc 1689.1696164095679 17.801980242436457
+
+```sequence
+Andrew->China: say hello
+```
