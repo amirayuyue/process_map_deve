@@ -9,16 +9,43 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
 </head>
 <body>
+  // Import mermaid
+//  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.css">
+//  <script src="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+
+
   <div id="app"></div>
   <script>
-    window.$docsify = {
-      loadSidebar: true,
+    var num = 0;
+mermaid.initialize({ startOnLoad: false });
+
+window.$docsify = {
+  loadSidebar: true,
       subMaxLevel: 3,
       name: '',
-      repo: ''
+      repo: '',
+  markdown: {
+    renderer: {
+      code: function(code, lang) {
+        if (lang === "mermaid") {
+          return (
+            '<div class="mermaid">' + mermaid.render('mermaid-svg-' + num++, code) + "</div>"
+          );
+        }
+        return this.origin.code.apply(this, arguments);
+      }
     }
+  }
+}
+    // window.$docsify = {
+    //   loadSidebar: true,
+    //   subMaxLevel: 3,
+    //   name: '',
+    //   repo: ''
+    // }
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 </body>
 </html>

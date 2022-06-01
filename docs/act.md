@@ -101,7 +101,11 @@ SPC use scaled charges 0.9 and run simulation and ana
 ../cholorform/data_ana/start_fitting exp 1710.37447988904 14.091539528430076 and calc 1707.6819202027104 13.351485181827684
 ../DMSO/data_ana/start_fitting exp 1709.04299583911 12.538141470180108 and calc 1711.3814035067585 11.126237651522842
 ../D2O/data_ana/start_fitting exp 1697.05963938974 17.309292649099916 and calc 1689.1696164095679 17.801980242436457
+<div class="mermaid">
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+</div>
 
-```sequence
-Andrew->China: say hello
-```
