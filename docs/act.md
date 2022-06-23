@@ -102,3 +102,14 @@ SPC use scaled charges 0.9 and run simulation and ana
 ../DMSO/data_ana/start_fitting exp 1709.04299583911 12.538141470180108 and calc 1711.3814035067585 11.126237651522842
 ../D2O/data_ana/start_fitting exp 1697.05963938974 17.309292649099916 and calc 1689.1696164095679 17.801980242436457
 
+## try different parameters for fitting
+* Using C5=O2 (C1, C3 are the two side carbons), C1-C5 is the OB-C5 direction
+C3-C5 is the OA-C5 direction  Z is pointing out, Z2 is point in
+for the fitting
+* C5 (x y z) O (x y z) C1 C3 (x) C1 C3(y) total of 10 data points
+
+[ x ] Acetone is done
+
+
+
+
